@@ -1,18 +1,21 @@
 {
-  "name": "advanced-vite-plugin",
+  "name": "playground-vue",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest",
-    "dev:play-vue": "pnpm --filter playground-vue dev"
+    "dev": "vite"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.14.0",
+  "dependencies": {
+    "vue": "catalog:"
+  },
   "devDependencies": {
-    "vite": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "vite-plugin-condensation": "workspace:*"
   }
 }

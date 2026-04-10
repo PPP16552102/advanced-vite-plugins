@@ -23,9 +23,7 @@
     "rootDir": ".",
     // 路径映射，相对于baseUrl
     "paths": {
-      "@vue/compat": ["packages/vue-compat/src"],
-      "@vue/*": ["packages/*/src"],
-      "vue": ["packages/vue/src"]
+      "@avp/*": ["packages/*/src"],
     },
     "isolatedDeclarations": true, // 每个声明文件都被当做单独的模块处理
     "composite": true // 是否启用项目的组合模式（可被其他config继承）
@@ -34,8 +32,6 @@
     "packages/global.d.ts",
     "packages/*/src",
     "packages/*/__tests__",
-    "packages/vue/jsx-runtime",
-    "packages/runtime-dom/types/jsx.d.ts",
     "scripts/*",
     "rollup.*.js"
   ]
