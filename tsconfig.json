@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // 根目录为当前config所在目录
+    "outDir": "temp", // 输出目录
+    "sourceMap": false, // 生成sourcemap文件
+    "target": "es2016", // 目标环境
+    "newLine": "LF", // 指定使用的换行符
+    "useDefineForClassFields": false, // 选择类字段的初始化方式，true(使用Object.defineProperty)，false(使用ES6的class中构造函数)
+    "module": "esnext", // 指定生成的模块系统
+    "moduleResolution": "node", // 模块解析策略
+    "allowJs": false, // 是否允许js文件
+    "strict": true, // 严格模式
+    "noUnusedLocals": true, // 不允许未使用的变量
+    "experimentalDecorators": true, // 启用装饰器
+    "resolveJsonModule": true, // 允许解析导入json文件
+    "isolatedModules": true, // 每个文件都被当做单独的模块处理
+    "skipLibCheck": true, // 跳过.d.ts文件的类型检查
+    "esModuleInterop": true, // 允许从CommonJS模块中导入默认导出，允许使用import * as ns from "module"导入模块
+    "removeComments": false, // 编译后移除注释
+    "jsx": "preserve", // 支持JSX语法
+    "lib": ["es2016", "dom"], // 编译时需要引入的库文件
+    "types": ["vitest/globals", "puppeteer", "node"], // 引入的类型声明文件
+    "rootDir": ".",
+    // 路径映射，相对于baseUrl
+    "paths": {
+      "@vue/compat": ["packages/vue-compat/src"],
+      "@vue/*": ["packages/*/src"],
+      "vue": ["packages/vue/src"]
+    },
+    "isolatedDeclarations": true, // 每个声明文件都被当做单独的模块处理
+    "composite": true // 是否启用项目的组合模式（可被其他config继承）
+  },
+  "include": [
+    "packages/global.d.ts",
+    "packages/*/src",
+    "packages/*/__tests__",
+    "packages/vue/jsx-runtime",
+    "packages/runtime-dom/types/jsx.d.ts",
+    "scripts/*",
+    "rollup.*.js"
+  ]
+}
