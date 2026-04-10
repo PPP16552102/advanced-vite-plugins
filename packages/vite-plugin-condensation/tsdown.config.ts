@@ -6,5 +6,8 @@ export default defineConfig({
   format: ['cjs', 'es'],
   dts: true,
   clean: true,
-  treeshake: true
+  treeshake: true,
+  deps: {
+    skipNodeModulesBundle: true
+  }
 })

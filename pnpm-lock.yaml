@@ -6,9 +6,18 @@ settings:
 
 catalogs:
   default:
+    '@types/debug':
+      specifier: ^4.1.13
+      version: 4.1.13
+    '@types/node':
+      specifier: ^25.6.0
+      version: 25.6.0
     '@vitejs/plugin-vue':
       specifier: ^6.0.5
       version: 6.0.5
+    debug:
+      specifier: ^4.4.3
+      version: 4.4.3
     tsdown:
       specifier: ^0.21.7
       version: 0.21.7
@@ -28,10 +37,10 @@ importers:
     devDependencies:
       vite:
         specifier: 'catalog:'
-        version: 8.0.8
+        version: 8.0.8(@types/node@25.6.0)
       vitest:
         specifier: 'catalog:'
-        version: 4.1.4(vite@8.0.8)
+        version: 4.1.4(@types/node@25.6.0)(vite@8.0.8(@types/node@25.6.0))
 
   packages/playground/vue:
     dependencies:
@@ -41,19 +50,31 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 'catalog:'
-        version: 6.0.5(vite@8.0.8)(vue@3.5.32)
+        version: 6.0.5(vite@8.0.8(@types/node@25.6.0))(vue@3.5.32)
       vite-plugin-condensation:
         specifier: workspace:*
         version: link:../../vite-plugin-condensation
       vitest:
         specifier: 'catalog:'
-        version: 4.1.4(vite@8.0.8)
+        version: 4.1.4(@types/node@25.6.0)(vite@8.0.8(@types/node@25.6.0))
 
   packages/vite-plugin-condensation:
     devDependencies:
+      '@types/debug':
+        specifier: 'catalog:'
+        version: 4.1.13
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.6.0
+      debug:
+        specifier: 'catalog:'
+        version: 4.4.3
       tsdown:
         specifier: 'catalog:'
         version: 0.21.7(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      vite:
+        specifier: 'catalog:'
+        version: 8.0.8(@types/node@25.6.0)
 
 packages:
 
@@ -340,6 +361,9 @@ packages:
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
 
+  '@types/debug@4.1.13':
+    resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
+
   '@types/deep-eql@4.0.2':
     resolution: {integrity: sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==}
 
@@ -348,6 +372,12 @@ packages:
 
   '@types/jsesc@2.5.1':
     resolution: {integrity: sha512-9VN+6yxLOPLOav+7PwjZbxiID2bVaeq0ED4qSQmdQTdjnXJSaCVKTR58t15oqH1H5t8Ng2ZX1SabJVoN9Q34bw==}
+
+  '@types/ms@2.1.0':
+    resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
+
+  '@types/node@25.6.0':
+    resolution: {integrity: sha512-+qIYRKdNYJwY3vRCZMdJbPLJAtGjQBudzZzdzwQYkEPQd+PJGixUL5QfvCLDaULoLv+RhT3LDkwEfKaAkgSmNQ==}
 
   '@vitejs/plugin-vue@6.0.5':
     resolution: {integrity: sha512-bL3AxKuQySfk1iGcBsQnoRVexTPJq0Z/ixFVM8OhVJAP6ZXXXLtM7NFKWhLl30Kg7uTBqIaPXbh+nuQCuBDedg==}
@@ -442,6 +472,15 @@ packages:
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
+
+  debug@4.4.3:
+    resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
 
   defu@6.1.7:
     resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
@@ -586,6 +625,9 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
+  ms@2.1.3:
+    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -713,6 +755,9 @@ packages:
 
   unconfig-core@7.5.0:
     resolution: {integrity: sha512-Su3FauozOGP44ZmKdHy2oE6LPjk51M/TRRjHv2HNCWiDvfvCoxC2lno6jevMA91MYAdCdwP05QnWdWpSbncX/w==}
+
+  undici-types@7.19.2:
+    resolution: {integrity: sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg==}
 
   unrun@0.2.34:
     resolution: {integrity: sha512-LyaghRBR++r7svhDK6tnDz2XaYHWdneBOA0jbS8wnRsHerI9MFljX4fIiTgbbNbEVzZ0C9P1OjWLLe1OqoaaEw==}
@@ -1020,16 +1065,26 @@ snapshots:
       '@types/deep-eql': 4.0.2
       assertion-error: 2.0.1
 
+  '@types/debug@4.1.13':
+    dependencies:
+      '@types/ms': 2.1.0
+
   '@types/deep-eql@4.0.2': {}
 
   '@types/estree@1.0.8': {}
 
   '@types/jsesc@2.5.1': {}
 
-  '@vitejs/plugin-vue@6.0.5(vite@8.0.8)(vue@3.5.32)':
+  '@types/ms@2.1.0': {}
+
+  '@types/node@25.6.0':
+    dependencies:
+      undici-types: 7.19.2
+
+  '@vitejs/plugin-vue@6.0.5(vite@8.0.8(@types/node@25.6.0))(vue@3.5.32)':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.2
-      vite: 8.0.8
+      vite: 8.0.8(@types/node@25.6.0)
       vue: 3.5.32
 
   '@vitest/expect@4.1.4':
@@ -1041,13 +1096,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.4(vite@8.0.8)':
+  '@vitest/mocker@4.1.4(vite@8.0.8(@types/node@25.6.0))':
     dependencies:
       '@vitest/spy': 4.1.4
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 8.0.8
+      vite: 8.0.8(@types/node@25.6.0)
 
   '@vitest/pretty-format@4.1.4':
     dependencies:
@@ -1147,6 +1202,10 @@ snapshots:
 
   csstype@3.2.3: {}
 
+  debug@4.4.3:
+    dependencies:
+      ms: 2.1.3
+
   defu@6.1.7: {}
 
   detect-libc@2.1.2: {}
@@ -1236,6 +1295,8 @@ snapshots:
   magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  ms@2.1.3: {}
 
   nanoid@3.3.11: {}
 
@@ -1376,6 +1437,8 @@ snapshots:
       '@quansync/fs': 1.0.0
       quansync: 1.0.0
 
+  undici-types@7.19.2: {}
+
   unrun@0.2.34(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
     dependencies:
       rolldown: 1.0.0-rc.12(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
@@ -1383,7 +1446,7 @@ snapshots:
       - '@emnapi/core'
       - '@emnapi/runtime'
 
-  vite@8.0.8:
+  vite@8.0.8(@types/node@25.6.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -1391,12 +1454,13 @@ snapshots:
       rolldown: 1.0.0-rc.15
       tinyglobby: 0.2.16
     optionalDependencies:
+      '@types/node': 25.6.0
       fsevents: 2.3.3
 
-  vitest@4.1.4(vite@8.0.8):
+  vitest@4.1.4(@types/node@25.6.0)(vite@8.0.8(@types/node@25.6.0)):
     dependencies:
       '@vitest/expect': 4.1.4
-      '@vitest/mocker': 4.1.4(vite@8.0.8)
+      '@vitest/mocker': 4.1.4(vite@8.0.8(@types/node@25.6.0))
       '@vitest/pretty-format': 4.1.4
       '@vitest/runner': 4.1.4
       '@vitest/snapshot': 4.1.4
@@ -1413,8 +1477,10 @@ snapshots:
       tinyexec: 1.1.1
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
-      vite: 8.0.8
+      vite: 8.0.8(@types/node@25.6.0)
       why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 25.6.0
     transitivePeerDependencies:
       - msw
 

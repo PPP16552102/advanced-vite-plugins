@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { testLog } from 'vite-plugin-condensation'
-
-testLog();
+import vitePluginCondensation from 'vite-plugin-condensation'
 
 export default defineConfig({
   plugins: [
-    vue()
+    vue(),
+    vitePluginCondensation()
   ]
 })

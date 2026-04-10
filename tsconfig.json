@@ -6,8 +6,8 @@
     "target": "es2016", // 目标环境
     "newLine": "LF", // 指定使用的换行符
     "useDefineForClassFields": false, // 选择类字段的初始化方式，true(使用Object.defineProperty)，false(使用ES6的class中构造函数)
-    "module": "esnext", // 指定生成的模块系统
-    "moduleResolution": "node", // 模块解析策略
+    "module": "nodenext", // 指定生成的模块系统
+    "moduleResolution": "nodenext", // 模块解析策略
     "allowJs": false, // 是否允许js文件
     "strict": true, // 严格模式
     "noUnusedLocals": true, // 不允许未使用的变量

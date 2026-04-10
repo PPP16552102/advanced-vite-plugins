@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "dev:play-vue": "pnpm --filter playground-vue dev"
+    "dev:play-vue": "pnpm --filter playground-vue dev",
+    "build:play-vue": "pnpm --filter playground-vue build"
   },
   "keywords": [],
   "author": "",
