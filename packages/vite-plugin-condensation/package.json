@@ -27,6 +27,8 @@
     "@types/debug": "catalog:",
     "tsdown": "catalog:",
     "vite": "catalog:",
-    "debug": "catalog:"
+    "debug": "catalog:",
+    "fs-extra": "catalog:",
+    "@types/fs-extra": "catalog:"
   }
 }

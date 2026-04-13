@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest",
     "dev:play-vue": "pnpm --filter playground-vue dev",
-    "build:play-vue": "pnpm --filter playground-vue build"
+    "build:play-vue": "pnpm --filter vite-plugin-condensation build && pnpm --filter playground-vue build"
   },
   "keywords": [],
   "author": "",

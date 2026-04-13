@@ -3,6 +3,8 @@ import { join } from 'node:path'
 
 export const isFunction = (arg: unknown): arg is (...args: any[]) => any => typeof arg === 'function' 
 
+export const isRegExp = (arg: unknown): arg is RegExp => Object.prototype.toString.call(arg) === '[object RegExp]'
+
 export function readAllFile(root: string, reg?: RegExp): string[] {
   let ret: string[] = []
   try {
